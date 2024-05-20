@@ -34,7 +34,6 @@ public class CustomerDetail extends javax.swing.JFrame {
         jTextField2.setText(customer.getLastName());
         jTextField3.setText(customer.getEmail());
         jTextField4.setText(customer.getPhone());
-        jTextField5.setText(customer.getBirthday());
 
         CustomerAddress address = customer.getAddress();
         if (address != null) {
@@ -51,7 +50,6 @@ public class CustomerDetail extends javax.swing.JFrame {
         customer.setLastName(jTextField2.getText());
         customer.setEmail(jTextField3.getText());
         customer.setPhone(jTextField4.getText());
-        customer.setBirthday(jTextField5.getText());
 
         CustomerAddress address = new CustomerAddress();
         address.setStreetNum(Integer.parseInt(jTextField10.getText()));

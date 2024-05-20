@@ -50,7 +50,6 @@ public class CustomerDAO implements DAOInterface<BankCustomer> {
         pStatement.setString(2, cust.getLastName());
         pStatement.setString(3, cust.getEmail());
         pStatement.setString(4, cust.getPhone());
-        pStatement.setString(5, cust.getBirthday());
         res = pStatement.executeUpdate();
         disconnect();
 
@@ -70,7 +69,6 @@ public class CustomerDAO implements DAOInterface<BankCustomer> {
             updatedCust = new BankCustomer( result.getInt("addressid"), result.getString("first_name"), result.getString("last_name"));
             updatedCust.setEmail(result.getString("email"));
             updatedCust.setPhone(result.getString("phone"));
-            updatedCust.setBirthday(result.getString("birthday"));
 
         }
 
@@ -91,7 +89,6 @@ public class CustomerDAO implements DAOInterface<BankCustomer> {
 
         pStatement.setString(3, cust.getEmail());
         pStatement.setString(4, cust.getPhone());
-        pStatement.setString(5, cust.getBirthday());
         result = pStatement.executeUpdate();
 
         return result;
