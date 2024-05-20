@@ -7,3 +7,4 @@ Steps to Run:
 Some things to note:
 - The bank application isn't 100%, the TransactionSummary shows up when clicked on Accounts, but it does not display the list of transactions
 - I am certain there are some minor button bugs as well 
+- Add New Customer is not implemented
