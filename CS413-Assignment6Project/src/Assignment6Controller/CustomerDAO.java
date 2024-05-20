@@ -66,7 +66,7 @@ public class CustomerDAO implements DAOInterface<BankCustomer> {
 
         BankCustomer updatedCust = null;
         if (result.next()) {
-            updatedCust = new BankCustomer( result.getInt("addressid"), result.getString("first_name"), result.getString("last_name"));
+            updatedCust = new BankCustomer( result.getInt("id"), result.getString("first_name"), result.getString("last_name"));
             updatedCust.setEmail(result.getString("email"));
             updatedCust.setPhone(result.getString("phone"));
 
@@ -89,6 +89,7 @@ public class CustomerDAO implements DAOInterface<BankCustomer> {
 
         pStatement.setString(3, cust.getEmail());
         pStatement.setString(4, cust.getPhone());
+        pStatement.setInt(5,cust.getCustomerNumber());
         result = pStatement.executeUpdate();
 
         return result;

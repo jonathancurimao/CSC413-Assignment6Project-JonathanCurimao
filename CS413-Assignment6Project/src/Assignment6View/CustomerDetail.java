@@ -52,7 +52,7 @@ public class CustomerDetail extends javax.swing.JFrame {
         customer.setPhone(jTextField4.getText());
 
         CustomerAddress address = new CustomerAddress();
-        address.setStreetNum(Integer.parseInt(jTextField10.getText()));
+        address.setStreetNum(Integer.parseInt(jTextField5.getText()));
         address.setStreet(jTextField6.getText());
         address.setCity(jTextField7.getText());
         address.setState(jTextField8.getText());
@@ -121,8 +121,6 @@ public class CustomerDetail extends javax.swing.JFrame {
         jTextField3.setText("email");
 
         jTextField4.setText("phone");
-
-        jTextField5.setText("street number");
 
         jTextField6.setText("street");
 

@@ -20,9 +20,9 @@ public class CustomerDataConnection extends DataConnection {
 
     // SQL queries to be used to persist customer business objects as needed by the DAO
     private static final String INSERT_SQL = "INSERT INTO bankcustomer (first_name, last_name, email, phone) VALUES (?, ?, ?, ?)";
-    private static final String SELECT_SQL_BYID = "SELECT * FROM bankcustomer WHERE addressid = ?";
-    private static final String UPDATE_SQL = "UPDATE bankcustomer SET first_name = ?, last_name = ?, email = ?, phone = ? WHERE addressid = ?";
-    private static final String DELETE_SQL = "DELETE FROM bankcustomer WHERE addressid = ?";
+    private static final String SELECT_SQL_BYID = "SELECT * FROM bankcustomer WHERE id = ?";
+    private static final String UPDATE_SQL = "UPDATE bankcustomer SET first_name = ?, last_name = ?, email = ?, phone = ? WHERE id = ?";
+    private static final String DELETE_SQL = "DELETE FROM bankcustomer WHERE id = ?";
 
  
     public CustomerDataConnection()  { } 
