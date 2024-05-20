@@ -4,6 +4,7 @@
  */
 package Assignment6View;
 
+import Assignment6Model.BankAccount;
 import Assignment6Model.BankAccountTransaction;
 import Assignment6Controller.AccountTransactionDTO;
 
@@ -16,6 +17,7 @@ import java.awt.event.ActionListener;
  * @author karunmehta
  */
 public class AccountSearch extends javax.swing.JFrame {
+    private BankAccount account;
     private JTextField accountIdField;
     private JButton searchButton;
 
