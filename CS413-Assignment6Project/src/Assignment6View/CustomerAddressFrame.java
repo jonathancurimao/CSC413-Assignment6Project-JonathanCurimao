@@ -4,7 +4,7 @@ import Assignment6Model.CustomerAddress;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
-import Assignment6Controller.CustomerDTO;
+
 
 public class CustomerAddressFrame extends javax.swing.JFrame {
     private CustomerAddress address;

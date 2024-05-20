@@ -80,12 +80,12 @@ public class AccountDAO implements DAOInterface<BankAccount>{
     private LocalDate createLocalDate(String dateStr) {
 
 
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-mm-yyyy");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 
         //convert String to LocalDate
-        LocalDate localDate = LocalDate.parse(dateStr, formatter);
+
         
-        return localDate;
+        return LocalDate.parse(dateStr, formatter);
         
     }
     
@@ -128,13 +128,13 @@ public class AccountDAO implements DAOInterface<BankAccount>{
 
         while (result.next()) {
             BankAccount account;
-            if (result.getString("acc_type").equalsIgnoreCase(checking))
+            if (result.getString("acct_type").equalsIgnoreCase(checking))
                 account = new CheckingAccount(result.getInt("acct_num"));
             else
                 account = new SavingsAccount(result.getInt("acct_num"));
             account.setBalance(result.getDouble("balance"));
             account.setCreateDate(createLocalDate(result.getString("create_date")));
-            account.setCustNum(result.getInt("cust_num"));
+            account.setCustNum(result.getInt("cust_id"));
             accounts.add(account);
         }
         return accounts;

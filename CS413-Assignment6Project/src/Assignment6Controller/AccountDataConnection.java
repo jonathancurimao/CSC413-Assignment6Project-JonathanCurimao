@@ -15,6 +15,7 @@ public class AccountDataConnection extends DataConnection {
     private static final String SELECT_SQL_BYID = "SELECT * FROM bankaccount WHERE acct_type = ?";
     private static final String UPDATE_SQL = "UPDATE bankaccount SET cust_id = ?, balance = ?, create_date = ?, acct_type = ? WHERE acct_num = ?";
     private static final String DELETE_SQL = "DELETE FROM bankaccount WHERE acct_type = ?";
+    private static final String SELECT_BY_CUSTOMERID = "SELECT * FROM bankaccount WHERE cust_id = ?";
 
     public static String getInsert() {
         
@@ -34,5 +35,9 @@ public class AccountDataConnection extends DataConnection {
     public static String getDelete() {
         
         return DELETE_SQL;
-    }        
+    }
+
+    public static String getSelectByCustomerId() {
+        return SELECT_BY_CUSTOMERID;
+    }
 }

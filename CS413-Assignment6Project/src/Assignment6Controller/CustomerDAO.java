@@ -70,8 +70,7 @@ public class CustomerDAO implements DAOInterface<BankCustomer> {
             updatedCust.setEmail(result.getString("email"));
             updatedCust.setPhone(result.getString("phone"));
 
-            CustomerAddress address = getAddress(result.getInt("addressid"));
-            updatedCust.setAddress(address);
+
 
         }
 
@@ -182,6 +181,9 @@ public class CustomerDAO implements DAOInterface<BankCustomer> {
             customer.setPhone(result.getString("phone"));
             customer.setBirthday(result.getString("birthday"));
             customer.setAddressId(result.getInt("addressid"));
+
+            customer.setAddress(CustomerAddressDTO.customerAddressByID(result.getInt("addressid")));
+
             customers.add(customer);
         }
         return customers;

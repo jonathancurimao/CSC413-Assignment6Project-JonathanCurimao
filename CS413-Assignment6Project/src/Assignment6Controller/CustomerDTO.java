@@ -119,7 +119,7 @@ public class CustomerDTO {
         return updateResult;
     }
 
-    // method that calls the get allCustomers() method in CustomerDAO
+    // method that calls the getallCustomers() method in CustomerDAO
     public static List<BankCustomer> getAllCustomers() {
         try {
             return cd.getAllCustomers();

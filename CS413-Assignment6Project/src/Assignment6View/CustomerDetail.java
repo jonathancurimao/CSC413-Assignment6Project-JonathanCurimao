@@ -4,14 +4,17 @@
  */
 package Assignment6View;
 
+import Assignment6Controller.AccountDTO;
 import Assignment6Controller.CustomerAddressDTO;
 import Assignment6Controller.CustomerDTO;
+import Assignment6Model.BankAccount;
 import Assignment6Model.BankCustomer;
 import Assignment6Model.CustomerAddress;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
 
 public class CustomerDetail extends javax.swing.JFrame {
     private BankCustomer customer;
@@ -49,6 +52,13 @@ public class CustomerDetail extends javax.swing.JFrame {
         addressFrame.setVisible(true);
     }
 
+    private void showAccounts() {
+        int customerId = customer.getCustomerNumber();
+        List<BankAccount> accounts = AccountDTO.findAccountsByCustomerID(customerId);
+        AccountList accountList = new AccountList(accounts);
+        accountList.setVisible(true);
+    }
+
     @SuppressWarnings("unchecked")
     private void initComponents() {
         jLabel1 = new javax.swing.JLabel();
@@ -63,6 +73,7 @@ public class CustomerDetail extends javax.swing.JFrame {
         save = new javax.swing.JButton();
         cancel = new javax.swing.JButton();
         updateAddress = new javax.swing.JButton();
+        accounts = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -95,6 +106,13 @@ public class CustomerDetail extends javax.swing.JFrame {
         updateAddress.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 updateAddress();
+            }
+        });
+
+        accounts.setText("Accounts");
+        accounts.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                showAccounts();
             }
         });
 
@@ -132,6 +150,8 @@ public class CustomerDetail extends javax.swing.JFrame {
                                                 .addGap(18, 18, 18)
                                                 .addComponent(updateAddress)
                                                 .addGap(18, 18, 18)
+                                                .addComponent(accounts)
+                                                .addGap(18, 18, 18)
                                                 .addComponent(cancel)))
                                 .addContainerGap(30, Short.MAX_VALUE))
         );
@@ -156,6 +176,7 @@ public class CustomerDetail extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(save)
                                         .addComponent(updateAddress)
+                                        .addComponent(accounts)
                                         .addComponent(cancel))
                                 .addContainerGap(8, Short.MAX_VALUE))
         );
@@ -211,6 +232,7 @@ public class CustomerDetail extends javax.swing.JFrame {
     private javax.swing.JButton save;
     private javax.swing.JButton cancel;
     private javax.swing.JButton updateAddress;
+    private javax.swing.JButton accounts;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
