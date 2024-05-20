@@ -70,11 +70,34 @@ public class CustomerDAO implements DAOInterface<BankCustomer> {
             updatedCust.setEmail(result.getString("email"));
             updatedCust.setPhone(result.getString("phone"));
 
+            CustomerAddress address = getAddress(result.getInt("addressid"));
+            updatedCust.setAddress(address);
+
         }
 
 
 
         return updatedCust;
+    }
+
+    // Method to retrieve the address from the database by ID
+    public CustomerAddress getAddress(int addressId) throws SQLException {
+        pStatement = connection.prepareStatement(AddressDataConnection.getSelect());
+        pStatement.setInt(1, addressId);
+        result = pStatement.executeQuery();
+
+        CustomerAddress address = null;
+        if (result.next()) {
+            address = new CustomerAddress(
+                    result.getInt("custid"),
+                    result.getInt("streetnum"),
+                    result.getString("streetname"),
+                    result.getString("city"),
+                    result.getString("state"),
+                    result.getInt("zip")
+            );
+        }
+        return address;
     }
 
     // Method to update a user in the database

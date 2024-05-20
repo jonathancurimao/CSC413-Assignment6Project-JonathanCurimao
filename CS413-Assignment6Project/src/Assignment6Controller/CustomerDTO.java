@@ -107,7 +107,19 @@ public class CustomerDTO {
         return customers;
     }
 
-    // method that calls the getallCustomers() method in CustomerDAO
+    public static int updateAddress(CustomerAddress address) {
+        int updateResult = -1;
+        try {
+            updateResult = cd.updateAddress(address);
+        } catch (SQLException se) {
+            System.out.println(se.getMessage());
+        }
+        if (updateResult != -1) System.out.println("\nAddress Update Successful");
+        System.out.println("Address Details:\n" + address.toString());
+        return updateResult;
+    }
+
+    // method that calls the get allCustomers() method in CustomerDAO
     public static List<BankCustomer> getAllCustomers() {
         try {
             return cd.getAllCustomers();
