@@ -5,11 +5,10 @@
 package Assignment6Controller;
 
 /**
- *
  * @author karunmehta
  */
 public class AccountDataConnection extends DataConnection {
- 
+
     // SQL queries to be used to persist account business objects as needed by the DAO
     private static final String INSERT_SQL = "INSERT INTO bankaccount (cust_id, balance, create_date, acct_type) VALUES (?, ?, ?, ?)";
     private static final String SELECT_SQL_BYID = "SELECT * FROM bankaccount WHERE acct_type = ?";
@@ -18,22 +17,22 @@ public class AccountDataConnection extends DataConnection {
     private static final String SELECT_BY_CUSTOMERID = "SELECT * FROM bankaccount WHERE cust_id = ?";
 
     public static String getInsert() {
-        
+
         return INSERT_SQL;
     }
-    
+
     public static String getUpdate() {
-        
+
         return UPDATE_SQL;
     }
-    
+
     public static String getSelect() {
-        
+
         return SELECT_SQL_BYID;
     }
-    
+
     public static String getDelete() {
-        
+
         return DELETE_SQL;
     }
 

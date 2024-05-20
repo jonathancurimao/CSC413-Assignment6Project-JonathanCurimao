@@ -23,6 +23,7 @@ import java.util.List;
  */
 public class AccountDetail extends javax.swing.JFrame {
     private BankAccount account;
+    private BankAccountTransaction transaction;
 
     /**
      * Creates new form AccountDetail

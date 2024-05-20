@@ -6,6 +6,7 @@ package Assignment6Controller;
 
 import Assignment6Model.*;
 import Assignment6Model.BankCustomer;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -15,7 +16,6 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
- *
  * @author karunmehta
  */
 
@@ -96,6 +96,7 @@ public class AccountTransactionDAO implements DAOInterface<BankAccountTransactio
         return -1;
     }
 
+    // used to get Customer Transactions By Account ID
     public List<BankAccountTransaction> getTransactionsByAccountId(int accountId) throws SQLException {
         List<BankAccountTransaction> transactions = new ArrayList<>();
         PreparedStatement pStatement = connection.prepareStatement("SELECT * FROM accounttransaction WHERE acct_id = ?");

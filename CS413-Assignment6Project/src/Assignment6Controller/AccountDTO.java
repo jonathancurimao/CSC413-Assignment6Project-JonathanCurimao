@@ -3,10 +3,10 @@ package Assignment6Controller;
 import Assignment6Model.BankAccount;
 
 
-
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
 public class AccountDTO {
     static AccountDAO accountDAO = new AccountDAO();
 
@@ -20,7 +20,7 @@ public class AccountDTO {
         return accounts;
     }
 
-    public static int performUpdate (BankAccount account) {
+    public static int performUpdate(BankAccount account) {
         int updateResult = -1;
         try {
             updateResult = accountDAO.update(account);
@@ -30,6 +30,6 @@ public class AccountDTO {
         if (updateResult != -1)
             System.out.println("\nUpdate Successful");
         System.out.println("Account Details:\n" + account.toString());
-            return updateResult;
+        return updateResult;
     }
 }

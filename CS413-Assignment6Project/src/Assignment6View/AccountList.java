@@ -22,7 +22,6 @@ public class AccountList extends javax.swing.JFrame {
     private javax.swing.JButton showDetail;
 
 
-
     /**
      * Creates new form AccountList
      */
