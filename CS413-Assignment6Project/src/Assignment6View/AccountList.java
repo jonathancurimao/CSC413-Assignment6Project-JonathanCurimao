@@ -134,7 +134,7 @@ public class AccountList extends javax.swing.JFrame {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                // For testing, create a default list of accounts
+                // For testing, creates a default list of accounts
                 List<BankAccount> defaultAccounts = Arrays.asList(
                         new CheckingAccount(1),
                         new SavingsAccount(2)

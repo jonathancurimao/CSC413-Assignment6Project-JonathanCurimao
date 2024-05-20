@@ -34,14 +34,14 @@ public class AccountDetail extends javax.swing.JFrame {
         populateAccountDetails();
     }
 
-    private void populateAccountDetails() {
+    private void populateAccountDetails() { // shows the Account Detail of the customer
         jTextField1.setText(String.valueOf(account.getCustNum()));
         jTextField2.setText(account.getType());
         jTextField3.setText(String.valueOf(account.getBalance()));
         jTextField4.setText(account.getCreateDate().toString());
     }
 
-    private void saveAccount() {
+    private void saveAccount() { // method that gets called when an customer update occurs
         account.setBalance(Double.parseDouble(jTextField3.getText()));
         account.setCreateDate(LocalDate.parse(jTextField4.getText()));
         account.setType(jTextField2.getText());
