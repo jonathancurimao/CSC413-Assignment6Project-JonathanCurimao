@@ -57,7 +57,7 @@ public class AccountTransactionDAO implements DAOInterface<BankAccountTransactio
         return res;
     }
 
-    // Method to retrieve a uscustomeraddress from the database by ID
+    // Method to retrieve  uscustomeraddress from the database by ID
     @Override
     public BankAccountTransaction get(int acctID) throws SQLException {
 
@@ -100,7 +100,7 @@ public class AccountTransactionDAO implements DAOInterface<BankAccountTransactio
     public List<BankAccountTransaction> getTransactionsByAccountId(int accountId) throws SQLException {
         List<BankAccountTransaction> transactions = new ArrayList<>();
         PreparedStatement pStatement = connection.prepareStatement("SELECT * FROM accounttransaction WHERE acct_id = ?");
-        pStatement.setInt(1, accountId);
+        pStatement.setInt(1, 1);
         ResultSet result = pStatement.executeQuery();
 
         while (result.next()) {

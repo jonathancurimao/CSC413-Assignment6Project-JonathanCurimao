@@ -10,16 +10,14 @@ package Assignment6Model;
  * @author kmehta
  */
 public class SavingsAccount extends BankAccount {
-    
+
     public SavingsAccount() {
         super();
         balance = 2000;
         this.setType("Savings");
     }
-    
-    public SavingsAccount(int bal) {
-        super();
-        balance = bal;
+    public SavingsAccount(int accountId) {
+        super(accountId);
         this.setType("Savings");
     } 
     

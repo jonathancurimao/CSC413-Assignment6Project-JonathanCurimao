@@ -10,17 +10,16 @@ package Assignment6Model;
  * @author kmehta
  */
 public class CheckingAccount extends BankAccount{
-    
+
     public CheckingAccount() {
         super();
         this.setType("Checking");
     }
-    public CheckingAccount(int bal) {
-        super();
-        balance = bal;
+    public CheckingAccount(int accountId) {
+        super(accountId);
         this.setType("Checking");
-    } 
-    
+    }
+
     @Override
     public int compareTo(BankAccount ba) {
         
