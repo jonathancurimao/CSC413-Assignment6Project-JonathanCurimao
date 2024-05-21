@@ -5,6 +5,6 @@ Steps to Run:
 4. For the username and password, username is kmehta and password is password
 
 Some things to note:
-- The bank application isn't 100%, the TransactionSummary shows up when clicked on Accounts, but it does not display the list of transactions
+- The bank application isn't 100%, the TransactionSummary shows up when clicked on Accounts, but it does not display the list of transactions correctly
 - I am certain there are some minor button bugs as well 
 - Add New Customer is not implemented
